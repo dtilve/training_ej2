@@ -38,6 +38,36 @@
                ReferencedContainer = "container:ej2.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "61A4F96C1C468FEC004AAFDB"
+               BuildableName = "ej2ModelTests.xctest"
+               BlueprintName = "ej2ModelTests"
+               ReferencedContainer = "container:ej2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "61A4F98F1C46900E004AAFDB"
+               BuildableName = "ej2ViewTests.xctest"
+               BlueprintName = "ej2ViewTests"
+               ReferencedContainer = "container:ej2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "61A4F9B11C46901D004AAFDB"
+               BuildableName = "ej2ViewModelTests.xctest"
+               BlueprintName = "ej2ViewModelTests"
+               ReferencedContainer = "container:ej2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

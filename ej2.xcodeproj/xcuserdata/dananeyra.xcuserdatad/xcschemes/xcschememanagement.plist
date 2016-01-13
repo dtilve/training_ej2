@@ -9,6 +9,21 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ej2Model.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>ej2View.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ej2ViewModel.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +33,36 @@
 			<true/>
 		</dict>
 		<key>61A4F94F1C468F36004AAFDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61A4F9631C468FEC004AAFDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61A4F96C1C468FEC004AAFDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61A4F9861C46900E004AAFDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61A4F98F1C46900E004AAFDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61A4F9A81C46901D004AAFDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61A4F9B11C46901D004AAFDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

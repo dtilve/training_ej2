@@ -12,18 +12,10 @@
 		61A4F9451C468F36004AAFDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A4F9431C468F36004AAFDB /* Main.storyboard */; };
 		61A4F9471C468F36004AAFDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A4F9461C468F36004AAFDB /* Assets.xcassets */; };
 		61A4F94A1C468F36004AAFDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A4F9481C468F36004AAFDB /* LaunchScreen.storyboard */; };
-		61A4F9551C468F36004AAFDB /* ej2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A4F9541C468F36004AAFDB /* ej2Tests.swift */; };
+		61E22A081C46CD76007D1B93 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E22A051C46CD76007D1B93 /* Alamofire.framework */; };
+		61E22A091C46CD76007D1B93 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E22A061C46CD76007D1B93 /* ReactiveCocoa.framework */; };
+		61E22A0A1C46CD76007D1B93 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E22A071C46CD76007D1B93 /* Result.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		61A4F9511C468F36004AAFDB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 61A4F9341C468F36004AAFDB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 61A4F93B1C468F36004AAFDB;
-			remoteInfo = ej2;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		61A4F93C1C468F36004AAFDB /* ej2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ej2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,9 +25,9 @@
 		61A4F9461C468F36004AAFDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61A4F9491C468F36004AAFDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61A4F94B1C468F36004AAFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61A4F9501C468F36004AAFDB /* ej2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ej2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61A4F9541C468F36004AAFDB /* ej2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ej2Tests.swift; sourceTree = "<group>"; };
-		61A4F9561C468F36004AAFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61E22A051C46CD76007D1B93 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		61E22A061C46CD76007D1B93 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		61E22A071C46CD76007D1B93 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,13 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61A4F94D1C468F36004AAFDB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				61E22A081C46CD76007D1B93 /* Alamofire.framework in Frameworks */,
+				61E22A091C46CD76007D1B93 /* ReactiveCocoa.framework in Frameworks */,
+				61E22A0A1C46CD76007D1B93 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +48,10 @@
 			isa = PBXGroup;
 			children = (
 				61A4F93E1C468F36004AAFDB /* ej2 */,
-				61A4F9531C468F36004AAFDB /* ej2Tests */,
 				61A4F93D1C468F36004AAFDB /* Products */,
+				61E22A051C46CD76007D1B93 /* Alamofire.framework */,
+				61E22A061C46CD76007D1B93 /* ReactiveCocoa.framework */,
+				61E22A071C46CD76007D1B93 /* Result.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				61A4F93C1C468F36004AAFDB /* ej2.app */,
-				61A4F9501C468F36004AAFDB /* ej2Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,15 +76,6 @@
 			path = ej2;
 			sourceTree = "<group>";
 		};
-		61A4F9531C468F36004AAFDB /* ej2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				61A4F9541C468F36004AAFDB /* ej2Tests.swift */,
-				61A4F9561C468F36004AAFDB /* Info.plist */,
-			);
-			path = ej2Tests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +86,7 @@
 				61A4F9381C468F36004AAFDB /* Sources */,
 				61A4F9391C468F36004AAFDB /* Frameworks */,
 				61A4F93A1C468F36004AAFDB /* Resources */,
+				61E22A041C46CC53007D1B93 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -115,24 +96,6 @@
 			productName = ej2;
 			productReference = 61A4F93C1C468F36004AAFDB /* ej2.app */;
 			productType = "com.apple.product-type.application";
-		};
-		61A4F94F1C468F36004AAFDB /* ej2Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 61A4F95C1C468F36004AAFDB /* Build configuration list for PBXNativeTarget "ej2Tests" */;
-			buildPhases = (
-				61A4F94C1C468F36004AAFDB /* Sources */,
-				61A4F94D1C468F36004AAFDB /* Frameworks */,
-				61A4F94E1C468F36004AAFDB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				61A4F9521C468F36004AAFDB /* PBXTargetDependency */,
-			);
-			name = ej2Tests;
-			productName = ej2Tests;
-			productReference = 61A4F9501C468F36004AAFDB /* ej2Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -146,10 +109,6 @@
 				TargetAttributes = {
 					61A4F93B1C468F36004AAFDB = {
 						CreatedOnToolsVersion = 7.2;
-					};
-					61A4F94F1C468F36004AAFDB = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 61A4F93B1C468F36004AAFDB;
 					};
 				};
 			};
@@ -167,7 +126,6 @@
 			projectRoot = "";
 			targets = (
 				61A4F93B1C468F36004AAFDB /* ej2 */,
-				61A4F94F1C468F36004AAFDB /* ej2Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -183,14 +141,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61A4F94E1C468F36004AAFDB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61E22A041C46CC53007D1B93 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		61A4F9381C468F36004AAFDB /* Sources */ = {
@@ -202,23 +173,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61A4F94C1C468F36004AAFDB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				61A4F9551C468F36004AAFDB /* ej2Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		61A4F9521C468F36004AAFDB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 61A4F93B1C468F36004AAFDB /* ej2 */;
-			targetProxy = 61A4F9511C468F36004AAFDB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		61A4F9431C468F36004AAFDB /* Main.storyboard */ = {
@@ -325,6 +280,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ej2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dtilve.ej2;
@@ -336,34 +295,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ej2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dtilve.ej2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		61A4F95D1C468F36004AAFDB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ej2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dtilve.ej2Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ej2.app/ej2";
-			};
-			name = Debug;
-		};
-		61A4F95E1C468F36004AAFDB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ej2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dtilve.ej2Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ej2.app/ej2";
 			};
 			name = Release;
 		};
@@ -386,14 +325,7 @@
 				61A4F95B1C468F36004AAFDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		61A4F95C1C468F36004AAFDB /* Build configuration list for PBXNativeTarget "ej2Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				61A4F95D1C468F36004AAFDB /* Debug */,
-				61A4F95E1C468F36004AAFDB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

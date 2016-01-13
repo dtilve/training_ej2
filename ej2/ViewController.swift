@@ -7,19 +7,45 @@
 //
 
 import UIKit
+import Accounts
+import Alamofire
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        func getTwitterTimeline() {
+            let account = ACAccountStore()
+            let accountType = account.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+
+            account.requestAccessToAccountsWithType(accountType, options: nil,
+                completion: { (granted, error) in
+                    if (granted)
+                    {
+                        let arrayOfAccount: NSArray = account.accountsWithAccountType(accountType)
+                        
+                        if (arrayOfAccount.count > 0)
+                        {
+                          //  let twitterAccount = arrayOfAccount.lastObject as! ACAccount
+
+                            Alamofire.request(.GET, "https://twitter.com/dmtilve")
+                                .responseJSON { response in
+                                    print(response.data)
+                                    (response.data?.valueForKey("text") as! [NSDictionary])
+                                 }
+                         
+                            
+                        }
+    
+                    }
+                    else
+                    {
+                    // error handler
+                    }
+                }
+        ) }
+
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
