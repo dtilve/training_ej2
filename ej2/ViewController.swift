@@ -8,44 +8,54 @@
 
 import UIKit
 import Accounts
-import Alamofire
+import Social
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        func getTwitterTimeline() {
-            let account = ACAccountStore()
-            let accountType = account.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-
-            account.requestAccessToAccountsWithType(accountType, options: nil,
-                completion: { (granted, error) in
-                    if (granted)
-                    {
-                        let arrayOfAccount: NSArray = account.accountsWithAccountType(accountType)
-                        
-                        if (arrayOfAccount.count > 0)
-                        {
-                          //  let twitterAccount = arrayOfAccount.lastObject as! ACAccount
-
-                            Alamofire.request(.GET, "https://twitter.com/dmtilve")
-                                .responseJSON { response in
-                                    print(response.data)
-                                    (response.data?.valueForKey("text") as! [NSDictionary])
-                                 }
-                         
-                            
-                        }
-    
-                    }
-                    else
-                    {
-                    // error handler
-                    }
-                }
-        ) }
-
+        print("didLoad")
+        getTwitterTimeline()
     }
+    
+    func getTwitterTimeline() {
+        let account = ACAccountStore()
+        let accountType = account.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        print ("getTwitterTimeline")
+        account.requestAccessToAccountsWithType(accountType, options: nil) { (granted, error) in
+                if (granted) {
+                    let accounts = account.accountsWithAccountType(accountType)
+                    if (accounts.count > 0) {
+                        let timelineURL = NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json")
+                        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: timelineURL, parameters: nil)
+                        request.account = accounts.first as! ACAccount
+                        request?.performRequestWithHandler { data, _, error in
+                            if error == nil {
+                                do {
+                                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                                    let tweets = json.valueForKey("text") as! NSArray
+                                    let dates = json.valueForKey("created_at") as! NSArray
+                                    
+                                    
+                                        
+                                    print(tweets)
+                                    print(dates)
+                                }
+                                catch {
+                                    print("JSONSerializingError")
+                                }
+                                print("FEED!")
+                            } else {
+                                print("Error fetching timeline \(error)")
+                            }
+                        }
+                } else {
+                    // error handler
+                    print("not granted")
+                }
+            }
+        }
+    }
+    
 }
 
