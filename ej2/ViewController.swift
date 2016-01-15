@@ -11,7 +11,6 @@ import Accounts
 import Social
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         print("didLoad")
@@ -32,14 +31,10 @@ class ViewController: UIViewController {
                         request?.performRequestWithHandler { data, _, error in
                             if error == nil {
                                 do {
-                                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                                    let tweets = json.valueForKey("text") as! NSArray
-                                    let dates = json.valueForKey("created_at") as! NSArray
-                                    
-                                    
-                                        
+                                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as! [[String : AnyObject]]
+                                    let tweets = json.map{createTweet($0)}
                                     print(tweets)
-                                    print(dates)
+                                    //generateTable(tweets)
                                 }
                                 catch {
                                     print("JSONSerializingError")
@@ -57,5 +52,26 @@ class ViewController: UIViewController {
         }
     }
     
+}
+
+
+struct Tweet {
+    let text: String
+    let createdAt: NSDate
+    let pic: NSURL
+}
+
+func twitterDateFormatter() -> NSDateFormatter {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "EEE MMM dd HH:mm:ss Z yyyy"
+    return formatter
+}
+
+func createTweet(JSON: [String : AnyObject], dateFormatter: NSDateFormatter = twitterDateFormatter()) -> Tweet {
+    let text = JSON["text"] as! String
+    let rawCreatedAt = JSON["created_at"] as! String
+    let picURL = JSON["user"]!["profile_image_url"] as! NSURL
+    let date = dateFormatter.dateFromString(rawCreatedAt)
+    return Tweet(text: text, createdAt: date!, pic: picURL)
 }
 
