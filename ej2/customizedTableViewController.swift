@@ -1,4 +1,4 @@
-//
+	//
 //  customizedTableViewController.swift
 //  ej2
 //
@@ -94,8 +94,8 @@ class customizedTableViewController: UITableViewController {
 
         cell.tweetDate.text = tweet.createdAt.description
         cell.tweetText.text = tweet.text
-       // let urlToData = NSData(contentsOfURL: tweet.pic)
-       // cell.tweetPic.image = UIImage.init(data: urlToData!)
+        let urlToData = NSData(contentsOfURL: tweet.pic)
+        cell.tweetPic.image = UIImage.init(data: urlToData!)
         
         return cell
     }
