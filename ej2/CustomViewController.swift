@@ -10,11 +10,21 @@ import UIKit
 import Accounts
 import Social
 
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("didLoad")
-        getTwitterTimeline()
+class CustomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var tweets : Array<Tweet> = []
+    @IBOutlet var tweetsTable: UITableView!
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.tweets.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("myId") as! customTableViewCell
+        cell.tweetText.text = self.tweets[indexPath.row].text
+        cell.tweetDate.text = self.tweets[indexPath.row].createdAt.description
+
+        print("cellForRowAtIndexPath")
+        return cell
     }
     
     func getTwitterTimeline() {
@@ -32,9 +42,8 @@ class ViewController: UIViewController {
                             if error == nil {
                                 do {
                                     let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as! [[String : AnyObject]]
-                                    let tweets = json.map{createTweet($0)}
-                                    print(tweets)
-                                    //generateTable(tweets)
+                                    self.tweets = json.map{createTweet($0)} as Array<Tweet>
+                                    self.tweetsTable.reloadData()
                                 }
                                 catch {
                                     print("JSONSerializingError")
@@ -52,6 +61,14 @@ class ViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("didLoad")
+        tweetsTable.delegate = self
+        tweetsTable.dataSource = self
+        self.getTwitterTimeline()
+
+    }
 }
 
 
@@ -74,4 +91,3 @@ func createTweet(JSON: [String : AnyObject], dateFormatter: NSDateFormatter = tw
     let date = dateFormatter.dateFromString(rawCreatedAt)
     return Tweet(text: text, createdAt: date!, pic: picURL)
 }
-
