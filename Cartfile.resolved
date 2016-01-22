@@ -1,3 +1,4 @@
-github "Alamofire/Alamofire" "3.1.4"
+github "Alamofire/Alamofire" "3.1.5"
+github "MatthewYork/DateTools" "v1.7.0"
 github "antitypical/Result" "1.0.1"
 github "ReactiveCocoa/ReactiveCocoa" "v4.0.0-RC.1"

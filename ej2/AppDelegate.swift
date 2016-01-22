@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+       // let attributedText = attributedTextForTweet("Hola mi cuenta de twitter es @guidomb y quiero que sea un link")
+       // print(attributedText)
         return true
     }
 
